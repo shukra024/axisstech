@@ -1,0 +1,80 @@
+
+.form-container
+{
+	top: 50px;
+	margin: auto;
+	width: 20px;
+	border: 3px solid white;
+	border-radius: 25px;
+	background-color: #0C090A;
+	padding: 10px;
+}
+
+input[name=name], select {
+  width: 100%;
+  padding: 12px 20px;
+  background-color:#bff2ff;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #bff2ff;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+input[name=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #E0FFFF;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #E0FFFF;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+
+input[type=submit] {
+  width: 100%;
+  background-color:#7FFFD4;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #00FFFF;
+  color: black;
+}
+
+
+.nav {
+  margin: 0;
+  font-family: Verdana;
+}
+.navbar {
+  overflow: hidden;
+  background-color: #7FFFD4;
+  border-radius: 10px;
+	top: 7px;
+
+}
+.navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 16px;
+
+}
+
+.navbar a:hover {
+  background-color: #E0FFFF;
+  color: black;
+}
+.navbar-toggler-icon
+{
+	background-color: black;
+}

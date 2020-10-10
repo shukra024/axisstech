@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <title>SIGNUP</title>
+<style media="screen">
+  body
+  {
+    background-color: black;
+  }
+  h1
+  {
+  font-size:125px;
+  }
+</style>
+<script language="javascript">
+  function check()
+{
+
+  if(document.form1.name.value=="")
+  {
+    alert("Plese Enter Your Name");
+  document.form1.name.focus();
+  return false;
+  }
+
+  if(document.form1.email.value=="")
+  {
+    alert("Plese Enter your Email Address");
+	document.form1.email.focus();
+	return false;
+  }
+
+ if(document.form1.password.value=="")
+  {
+    alert("Plese Enter Your Password");
+	document.form1.password.focus();
+	return false;
+  }
+
+  if(document.form1.cpassword.value=="")
+  {
+    alert("Plese Enter Confirm Password");
+	document.form1.cpassword.focus();
+	return false;
+  }
+
+  if(document.form1.password.value!=document.form1.cpassword.value)
+  {
+    alert("Confirm Password does not matched");
+	document.form1.cpassword.focus();
+	return false;
+  }
+
+
+  e=document.form1.email.value;
+		f1=e.indexOf('@');
+		f2=e.indexOf('@',f1+1);
+		e1=e.indexOf('.');
+		e2=e.indexOf('.',e1+1);
+		n=e.length;
+
+		if(!(f1>0 && f2==-1 && e1>0 && e2==-1 && f1!=e1+1 && e1!=f1+1 && f1!=n-1 && e1!=n-1))
+		{
+			alert("Please Enter valid Email");
+			document.form1.email.focus();
+			return false;
+		}
+  return true;
+  }
+</script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+<a class="active" href="login.html"><span class="glyphicon glyphicon-user" color="black"></span>LOGIN</a>
+
+   </div>
+ </div>
+</nav>
+<br>
+
+<div class="row">
+<div class="col-12 col-md-6 menu">
+	<center><h1><b>AQUA</b><br><b>TO-DO</b><br><b>NOTE</b></</h1></center>
+</div>
+
+  <div class="form-container col-12 col-md-5 right">
+<form name="form1" method="post" action="signup.php" onSubmit="return check();">
+
+ <b><center><font size = "4"><input type="text" id="user_id" name="name" style="font-family:Lucida Console" placeholder="USER NAME"></font></center></b>
+ <b><center><font size = "4"><input type="text" id="user_id" name="email" style="font-family:Lucida Console" placeholder="EMAIL"></font></center></b>
+ <b><center><font size = "4"><input type="password" id="pass" name="password" style="font-family:Lucida Console" placeholder="PASSWORD"><br></font></center></b>
+ <b><center><font size = "4"><input type="password" id="pass" name="cpassword" style="font-family:Lucida Console" placeholder="CONFIRM PASSWORD"><br></font></center></b><br>
+ <b><font size = "5"><input name="submit" type="submit" id="submit" value="CREATE ACCOUNT" style="color:black"></font></b><br><br>
+  <center><font color="white"><p>Have an Account <a href="login.html"><font color="#7FFFD4">LOGIN</font></a></p></font></center>
+
+</form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
