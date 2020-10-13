@@ -44,7 +44,7 @@ $password = mysqli_real_escape_string($conn,$_POST['password']);
 					mysqli_query($conn,$sql);
 
 
-					header("Location:./login.html");
+					header("Location:./index.php");
 
 
 
