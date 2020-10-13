@@ -27,13 +27,13 @@ function saveTasks(container) {
 	tasks.forEach((element, index) => {
 		list.push(tasks[index].outerHTML);
 	});
-	localStorage.setItem('listOfTasks', JSON.stringify(list));
+	localStorage.setItem('workTasks', JSON.stringify(list));
 }
 
 // display Tasks from localstorage into UI
 function displayTask() {
 	let savedTasks;
-	savedTasks = JSON.parse(localStorage.getItem('listOfTasks'));
+	savedTasks = JSON.parse(localStorage.getItem('workTasks'));
 	// console.log(savedTasks);
 	if (savedTasks !== null) {
 		// console.log(savedTasks);
