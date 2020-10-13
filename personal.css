@@ -69,6 +69,7 @@ body
 	justify-content: start;
 	align-content: center;
 	gap: 2px;
+
 }
 
 .inputs {
@@ -97,7 +98,7 @@ button {
 .inputs > button {
 border-color: grey;
 	cursor: pointer;
-  border-radius: 1px;
+
 }
 .inputs > button:hover {
 	background-color: rgba(0, 0, 0, 0.9);
@@ -111,6 +112,7 @@ border-color: grey;
 	height: 500px;
 	overflow: auto;
   border: 2px solid #00FFFF;
+
 }
 
 .info {
@@ -119,7 +121,6 @@ border-color: grey;
 	justify-content:space-between;
 	border: 1px solid grey;
 	height: 30px;
-
 
 }
 
@@ -130,6 +131,7 @@ border-color: grey;
 	color: white;
 	width: 35px;
 	cursor: pointer;
+
 }
 
 .info > button:hover {
@@ -161,7 +163,6 @@ border-color: grey;
 }
 .checked-list {
 	background-color: rgba(0, 0, 0, 0.8);
-
 }
 
 @media only screen and (max-width: 1060px) {

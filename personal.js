@@ -27,13 +27,13 @@ function saveTasks(container) {
 	tasks.forEach((element, index) => {
 		list.push(tasks[index].outerHTML);
 	});
-	localStorage.setItem('listOfTasks', JSON.stringify(list));
+	localStorage.setItem('personalTask', JSON.stringify(list));
 }
 
 // display Tasks from localstorage into UI
 function displayTask() {
 	let savedTasks;
-	savedTasks = JSON.parse(localStorage.getItem('listOfTasks'));
+	savedTasks = JSON.parse(localStorage.getItem('personalTask'));
 	// console.log(savedTasks);
 	if (savedTasks !== null) {
 		// console.log(savedTasks);
@@ -54,7 +54,6 @@ function template() {
 		<div class="info-input">
 			<input class="checkbox"  type="checkbox" />
 			<h3 class="incomingValue">${objDOMs.input.value}</h3>
-
 		</div>
 		<button class="delBtn"><i class="fas fa-trash del"></i></button>
 	</div>
