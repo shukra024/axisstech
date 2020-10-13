@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
 		if($resultCheck < 1)
 		{
 			echo("no username found") ;
-		header("Location:./login.html?username=error");
+		header("Location:./index.php?username=error");
 
 		}
 
