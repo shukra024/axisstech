@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <title>SIGNUP</title>
+<style media="screen">
+  body
+  {
+    background-color: black;
+  }
+  h1
+  {
+  font-size:125px;
+  }
+  .form-container
+  {
+  	top: 50px;
+  	margin: auto;
+  	width: 20px;
+  	border: 3px solid white;
+  	border-radius: 25px;
+  	background-color: #0C090A;
+  	padding: 10px;
+  }
+  input[name=name], select {
+    width: 100%;
+    padding: 12px 20px;
+    background-color:#bff2ff;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #bff2ff;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+  input[name=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    background-color:#CFECEC;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #CFECEC;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+  input[name=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #E0FFFF;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #E0FFFF;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+  input[name=cpassword], select {
+    width: 100%;
+    padding: 12px 20px;
+    background-color:#F0FFFF;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #F0FFFF;
+    border-radius: 25px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color:#7FFFD4;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  input[type=submit]:hover {
+    background-color: #00FFFF;
+    color: black;
+  }
+
+  .nav {
+    margin: 0;
+    font-family: Verdana;
+  }
+  .navbar {
+    overflow: hidden;
+    background-color: #7FFFD4;
+    border-radius: 10px;
+  	top: 7px;
+
+  }
+  .navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 16px;
+
+  }
+
+  .navbar a:hover {
+    background-color: #E0FFFF;
+    color: black;
+  }
+
+</style>
+<script language="javascript">
+  function check()
+{
+
+  if(document.form2.name.value=="")
+  {
+    alert("Plese Enter Your Name");
+  document.form1.name.focus();
+  return false;
+  }
+
+  if(document.form2.email.value=="")
+  {
+    alert("Plese Enter your Email Address");
+	document.form1.email.focus();
+	return false;
+  }
+
+ if(document.form2.password.value=="")
+  {
+    alert("Plese Enter Your Password");
+	document.form1.password.focus();
+	return false;
+  }
+
+
+  if(document.form2.password.value!=document.form1.cpassword.value)
+  {
+    alert("Confirm Password does not matched");
+	document.form1.cpassword.focus();
+	return false;
+  }
+
+
+  e=document.form2.email.value;
+		f1=e.indexOf('@');
+		f2=e.indexOf('@',f1+1);
+		e1=e.indexOf('.');
+		e2=e.indexOf('.',e1+1);
+		n=e.length;
+
+		if(!(f1>0 && f2==-1 && e1>0 && e2==-1 && f1!=e1+1 && e1!=f1+1 && f1!=n-1 && e1!=n-1))
+		{
+			alert("Please Enter valid Email");
+			document.form2.email.focus();
+			return false;
+		}
+  return true;
+  }
+</script>
+
+<style media="screen">
+
+.avatar
+{
+    width: 100%;
+    padding: 12px 20px;
+    background-color:#CFECEC;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #CFECEC;
+    border-radius: 25px;
+    box-sizing: border-box;
+
+
+}
+
+</style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <a class="navbar-brand" href="#"></a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <div class="nav navbar-nav navbar-right">
+<a class="active" href="index.php"><i class="fas fa-sign-in-alt" color="black"></i> <span class="">LOGIN</span></a>
+</div>
+   </div>
+ </div>
+</nav>
+<br>
+
+<div class="row">
+<div class="col-12 col-md-6 menu">
+	<center><h1><b>AQUA</b><br><b>TO-DO</b><br><b>NOTE</b></</h1></center>
+</div>
+
+  <div class="form-container col-12 col-md-5 right">
+<form name="form2" method="post" action="edit.php" onSubmit="return check();">
+
+ <b><center><font size = "4"><input type="text" id="user_id" name="name" style="font-family:Lucida Console" placeholder="PHONE NUMBER"></font></center></b>
+ <b><center><font size = "4"><input type="text" id="user_id" name="email" style="font-family:Lucida Console" placeholder="HOMEADDRESS"></font></center></b>
+
+ <b><font size = "5"><input name="submit" type="submit" id="submit" value="CREATE ACCOUNT" style="color:black"></font></b><br><br>
+  <center><font color="white"><p>Have an Account <a href="login.html"><font color="#7FFFD4">LOGIN</font></a></p></font></center>
+
+</form>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
