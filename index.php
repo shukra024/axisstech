@@ -120,10 +120,6 @@ input[type=submit]:hover {
   background-color: #E0FFFF;
   color: black;
 }
-.navbar-toggler-icon
-{
-	background-color: black;
-}
 
 
 </style>
@@ -140,6 +136,7 @@ input[type=submit]:hover {
         <div class="navbar-nav">
           <div class="nav navbar-nav navbar-right">
 <a class="active" href="signup.html"><i class="fas fa-user-plus" color="black"></i> <span class="">SIGNUP</span></a>
+<li><a class="active" href="about.html"><i class="fa fa-heart fa-fw" color="black"></i> <span class="">ABOUT</span></a></li>
 </div>
    </div>
  </div>
