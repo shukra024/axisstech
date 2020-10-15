@@ -14,8 +14,9 @@ if(isset($_POST['submit']))
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
 $password = mysqli_real_escape_string($conn,$_POST['password']);
 	$cpassword = mysqli_real_escape_string($conn,$_POST['cpassword']);
+	$avatar = mysqli_real_escape_string($conn,$_POST['avatar']);
 
-	if(empty($name)||empty($email)||empty($password)||empty($cpassword))
+	if(empty($name)||empty($email)||empty($password)||empty($cpassword)||empty($avatar))
 	{
 		echo "empty fields";
 	}
@@ -39,7 +40,7 @@ $password = mysqli_real_escape_string($conn,$_POST['password']);
 		{
 
 
-					$sql = "INSERT into user (name,email,password,cpassword) VALUES ('$name','$email','$password','$cpassword');";
+					$sql = "INSERT into user (name,email,password,cpassword,avatar) VALUES ('$name','$email','$password','$cpassword','$avatar');";
 
 					mysqli_query($conn,$sql);
 

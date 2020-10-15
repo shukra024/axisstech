@@ -78,6 +78,24 @@
   }
 </script>
 
+<style media="screen">
+
+.avatar
+{
+    width: 100%;
+    padding: 12px 20px;
+    background-color:#CFECEC;
+    margin: 8px 0;
+    display: inline-block;
+    border: 3px solid #CFECEC;
+    border-radius: 25px;
+    box-sizing: border-box;
+
+
+}
+
+</style>
+
   </head>
   <body>
 
@@ -91,6 +109,7 @@
         <div class="navbar-nav">
           <div class="nav navbar-nav navbar-right">
 <a class="active" href="index.php"><i class="fas fa-sign-in-alt" color="black"></i> <span class="">LOGIN</span></a>
+<li><a class="active" href="about.html"><i class="fa fa-heart fa-fw" color="black"></i> <span class="">ABOUT</span></a></li>
 </div>
    </div>
  </div>
@@ -108,12 +127,16 @@
  <b><center><font size = "4"><input type="text" id="user_id" name="name" style="font-family:Lucida Console" placeholder="USER NAME"></font></center></b>
  <b><center><font size = "4"><input type="text" id="user_id" name="email" style="font-family:Lucida Console" placeholder="EMAIL"></font></center></b>
  <b><center><font size = "4"><input type="password" id="pass" name="password" style="font-family:Lucida Console" placeholder="PASSWORD"><br></font></center></b>
- <b><center><font size = "4"><input type="password" id="pass" name="cpassword" style="font-family:Lucida Console" placeholder="CONFIRM PASSWORD"><br></font></center></b><br>
+ <b><center><font size = "4"><input type="password" id="pass" name="cpassword" style="font-family:Lucida Console" placeholder="CONFIRM PASSWORD"><br></font></center></b>
+ <div class="avatar"><input type="file" name="avatar" accept="avatar/*" required /></div>
+
  <b><font size = "5"><input name="submit" type="submit" id="submit" value="CREATE ACCOUNT" style="color:black"></font></b><br><br>
   <center><font color="white"><p>Have an Account <a href="login.html"><font color="#7FFFD4">LOGIN</font></a></p></font></center>
 
 </form>
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
