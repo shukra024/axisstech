@@ -1,6 +1,7 @@
 <?php
 include_once 'data.php';
-$result = mysqli_query($conn,"SELECT * FROM user");
+session_start();
+$name = $_SESSION['name'];
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +60,7 @@ body
 
 .card-body
 {
-  background-color: white;
+  background-color: black;
   height:flex;
 width:600px;
 border-radius: 15px;
@@ -88,7 +89,9 @@ font-size:120px;
 }
 
 </style>
-
+<script type="text/javascript">
+  $path = "pro_pic/{$_POST['avatar']}";
+</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg  navbar-light">
@@ -110,34 +113,40 @@ font-size:120px;
 
   <?php
 include_once("data.php");
-$sql = "SELECT  name,email,password,cpassword,avatar FROM user";
+$sql = "SELECT * FROM user WHERE name = '$name'";
 $resultset = mysqli_query($conn, $sql) or die("database error:". mysqli_error($conn));
 while( $record = mysqli_fetch_assoc($resultset) ) {
+  $img = $record['avatar'];
 ?>
 
 <div class="row">
-<div class="col-12 col-md-6 menu">
-	<center><h1><b>AQUA</b><br><b>TO-DO</b><br><b>NOTE</b></</h1></center>
-</div>
+  <div class="col-12 col-md-6 menu">
+    <center><h1><b>AQUA</b><br><b>TO-DO</b><br><b>NOTE</b></</h1></center>
+  </div>
+<div class="col-12 col-md-3 menu">
 <div class="card hovercard">
 <div class="cardheader">
   <div class="avatar">
-<img src=images/$row[avatar] class='rounded-circle' alt='$row[p_name]'>
+
   </div>
 </div>
 
 <div class="card-body info">
 <div class="title">
-NAME : <?php echo $record['name']; ?>
+  <img src="pro_pic/<?php echo $img;?>" width="200" height="200">
+<font color="white" size="+2"><center><b>NAME : </b><?php echo $record['name']; ?></center></font>
 </div>
-<div class="desc">EMAIL : <?php echo $record['email']; ?></div>
-<div class="desc">PASSWORD :<?php echo $record['password']; ?></div>
+<div class="desc"><font color="white" size="+2"><center><b>EMAIL :</b> <?php echo $record['email']; ?></center></font></div>
+<div class="desc"><font color="white" size="+2"><center><b>PASSWORD :</b><?php echo $record['password']; ?></center></font></div>
 </div>
 
-<div class="card-footer bottom">
+
+<!--<div class="card-footer bottom">
 <a class="btn btn-primary" href="edit.html">EDIT PROFILE
 <i class="fas fa-user-edit"></i>
 </a>
+</div>-->
+
 </div>
 </div>
 
