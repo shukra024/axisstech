@@ -35,45 +35,45 @@
   if(document.form1.email.value=="")
   {
     alert("Plese Enter your Email Address");
-	document.form1.email.focus();
-	return false;
+  document.form1.email.focus();
+  return false;
   }
 
  if(document.form1.password.value=="")
   {
     alert("Plese Enter Your Password");
-	document.form1.password.focus();
-	return false;
+  document.form1.password.focus();
+  return false;
   }
 
   if(document.form1.cpassword.value=="")
   {
     alert("Plese Enter Confirm Password");
-	document.form1.cpassword.focus();
-	return false;
+  document.form1.cpassword.focus();
+  return false;
   }
 
   if(document.form1.password.value!=document.form1.cpassword.value)
   {
     alert("Confirm Password does not matched");
-	document.form1.cpassword.focus();
-	return false;
+  document.form1.cpassword.focus();
+  return false;
   }
 
 
   e=document.form1.email.value;
-		f1=e.indexOf('@');
-		f2=e.indexOf('@',f1+1);
-		e1=e.indexOf('.');
-		e2=e.indexOf('.',e1+1);
-		n=e.length;
+    f1=e.indexOf('@');
+    f2=e.indexOf('@',f1+1);
+    e1=e.indexOf('.');
+    e2=e.indexOf('.',e1+1);
+    n=e.length;
 
-		if(!(f1>0 && f2==-1 && e1>0 && e2==-1 && f1!=e1+1 && e1!=f1+1 && f1!=n-1 && e1!=n-1))
-		{
-			alert("Please Enter valid Email");
-			document.form1.email.focus();
-			return false;
-		}
+    if(!(f1>0 && f2==-1 && e1>0 && e2==-1 && f1!=e1+1 && e1!=f1+1 && f1!=n-1 && e1!=n-1))
+    {
+      alert("Please Enter valid Email");
+      document.form1.email.focus();
+      return false;
+    }
   return true;
   }
 </script>
@@ -118,17 +118,17 @@
 
 <div class="row">
 <div class="col-12 col-md-6 menu">
-	<center><h1><b>AQUA</b><br><b>TO-DO</b><br><b>NOTE</b></</h1></center>
+  <center><h1><b>AQUA</b><br><b>TO-DO</b><br><b>NOTE</b></</h1></center>
 </div>
 
   <div class="form-container col-12 col-md-5 right">
-<form name="form1" method="post" action="signup.php" onSubmit="return check();">
+<form name="form1" method="post" action="signUp.php" enctype="multipart/form-data" onSubmit="return check();">
 
  <b><center><font size = "4"><input type="text" id="user_id" name="name" style="font-family:Lucida Console" placeholder="USER NAME"></font></center></b>
  <b><center><font size = "4"><input type="text" id="user_id" name="email" style="font-family:Lucida Console" placeholder="EMAIL"></font></center></b>
  <b><center><font size = "4"><input type="password" id="pass" name="password" style="font-family:Lucida Console" placeholder="PASSWORD"><br></font></center></b>
  <b><center><font size = "4"><input type="password" id="pass" name="cpassword" style="font-family:Lucida Console" placeholder="CONFIRM PASSWORD"><br></font></center></b>
- <div class="avatar"><input type="file" name="avatar" accept="avatar/*" required /></div>
+ <div class="avatar"><input type='file'   id='myfile' name="file"></div>
 
  <b><font size = "5"><input name="submit" type="submit" id="submit" value="CREATE ACCOUNT" style="color:black"></font></b><br><br>
   <center><font color="white"><p>Have an Account <a href="login.html"><font color="#7FFFD4">LOGIN</font></a></p></font></center>

@@ -1,60 +1,103 @@
 <?php
+function_alert("error");
 
-session_start();
-$server = "localhost";
-$uname = "root";
-$pass = "";
-$dbname = "todo";
+function function_alert($msg) {
 
-$conn = mysqli_connect($server,$uname,$pass,$dbname);
+}
+?>
+<?php
+
+
+include_once("data.php");
 if(isset($_POST['submit']))
 {
 
 	$name = mysqli_real_escape_string($conn,$_POST['name']);
 	$email = mysqli_real_escape_string($conn,$_POST['email']);
-$password = mysqli_real_escape_string($conn,$_POST['password']);
+	$password = mysqli_real_escape_string($conn,$_POST['password']);
 	$cpassword = mysqli_real_escape_string($conn,$_POST['cpassword']);
-	$avatar = mysqli_real_escape_string($conn,$_POST['avatar']);
 
-	if(empty($name)||empty($email)||empty($password)||empty($cpassword)||empty($avatar))
+	if(empty($name)||empty($email)||empty($password)||empty($cpassword))
 	{
-		echo "empty fields";
+		  echo "<script type='text/javascript'>alert('$msg');</script>";
 	}
 
 
 	else
 	{
-		$sql = "SELECT * FROM user WHERE name = '$name'";
-		$result = mysqli_query($conn,$sql);
-		$resultCheck = mysqli_num_rows($result);
+					$sql = "SELECT * FROM user WHERE name ='$name'";
+					$result = mysqli_query($conn,$sql);
+					$resultCheck = mysqli_num_rows($result);
+
+					if($resultCheck > 0)
+					{
+						header("Location:./signup.html?error=User name taken");
+
+					}
+					 else
+					{
+
+							if(isset($_FILES['file']['name']))
+							{
+								$fileName = $_FILES['file']['name'];
+								$fileTempName = $_FILES['file']['tmp_name'];
+								$_FILESize = $_FILES['file']['size'];
+								$fileError = $_FILES['file']['error'];
+								$fileType = $_FILES['file']['type'];
 
 
-		if($resultCheck > 0)
-		{
-			echo "Id already in use";
+								$fileExt = explode('.', $fileName);
+								$actExt = strtolower(end($fileExt));
+								$allowed = array('jpg','jpeg','png');
+
+								if(in_array($actExt, $allowed))
+								{
+									if($fileError === 0)
+									{
+										if($_FILESize < 10000000)
+										{
+											$newName = uniqid('', true).".".$actExt;
+											$des = 'pro_pic/'.$newName;
 
 
-		}
+											$sql = "INSERT INTO user(name, email, password, cpassword,avatar) VALUES ('$name', '$email', '$password', '$cpassword','$newName');";
+											mysqli_query($conn,$sql);
+											move_uploaded_file($fileTempName,$des);
 
-		else
-		{
+											header("Location:./index.php?success=registered successfully");
 
+											session_start();
 
-					$sql = "INSERT into user (name,email,password,cpassword,avatar) VALUES ('$name','$email','$password','$cpassword','$avatar');";
+										}
+										else
+										{
+											header("Location:./signup.html?error=file too big");
 
-					mysqli_query($conn,$sql);
-
-
-					header("Location:./index.php");
-
-
-
-
+										}
 
 
+									}
+									else
+									{
+										header("Location:./signup.html?error=error");
 
-		}
+									}
 
+								}
+
+								else
+								{
+									header("Location:./signup.html?error=error12");
+
+								}
+							}
+
+							else
+							{
+								header("Location:./signup.html?error=error13");
+							}
+
+					}
 	}
 
 }
