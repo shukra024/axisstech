@@ -84,7 +84,7 @@ body
 <div class="row">
   <div class="form-container col-12 col-md-6">
 <input type="hidden" name="numbers" class="txtField" value="<?php echo $row['numbers']; ?>">
-<input type="number" placeholder=" TASK NUMBER" name="numbers"  value="<?php echo $row['numbers']; ?>">
+<input type="text" placeholder=" TASK NUMBER" name="numbers"  value="<?php echo $row['numbers']; ?>" readonly>
 <br>
 
 <input type="text" placeholder="TITLE" name="title" class="txtField" value="<?php echo $row['title']; ?>">

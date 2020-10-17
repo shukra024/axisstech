@@ -11,7 +11,7 @@ while($row = mysqli_fetch_array($result))
   $start_at = $row['start_at'];
 }
 
-$sql = "INSERT INTO remove (numbers,title,description,start_at,dating) VALUES ('$numbers', '$title', '$description', '$dating', '$start_at')";
+$sql = "INSERT INTO remove (numbers,title,description,dating,start_at) VALUES ('$numbers', '$title', '$description', '$dating', '$start_at')";
 
 mysqli_query($conn, $sql);
 
